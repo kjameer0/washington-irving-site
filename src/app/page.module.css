@@ -218,6 +218,11 @@
     filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
   }
 }
+.try {
+  background-color: red;
+  width: 50vw;
+  height: 30vh;
+}
 
 @keyframes rotate {
   from {
