@@ -1,10 +1,8 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import SideNavBar from "@/components/SideNavBar/SideNavBar";
-export default function Home() {
+
+export default function Page() {
   return (
     <div>
-    <h1>HOME</h1>
+    <h1>About</h1>
     <p>This is a sample HTML document.</p>
     <p>You can modify and customize it to create your own web pages.</p>
     <ul>
