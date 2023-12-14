@@ -160,7 +160,7 @@ export default function SideNavBar() {
         </ul>
       </nav>
       <div className={styles["address-container"]}>
-        <p className="address-p">
+        <p className={styles["address-p"]}>
           Washington Irving YABC <br /> 40 Irving Place NY, NY 10003
         </p>
       </div>

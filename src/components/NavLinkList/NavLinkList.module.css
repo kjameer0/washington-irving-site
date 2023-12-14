@@ -1,4 +1,24 @@
-.link-button {
-  margin: 2px 0;
+.nav-anchor {
+  margin: 8px 0;
+  width: 100%;
+}
+.nav-anchor .link-button {
+  font-size: .8rem;
+  font-family: var(--font-inter) sans-serif;
+  font-weight: 800;
+  font-style: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  margin: 4px 0;
   line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  background: #bad87f;
+  color: black;
+}
+.nav-anchor .link-button:hover {
+  transform: scale(1.05);
+  /* font-size: 1.3rem; */
 }

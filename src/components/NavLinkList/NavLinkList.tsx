@@ -6,7 +6,7 @@ export default function NavLinkList({ list }: {list: NavListItemType[]} ) {
     <ul>
       {list.map((anchor) => {
         return (
-          <li key={anchor.path} className="nav-anchor">
+          <li key={anchor.path} className={styles["nav-anchor"]}>
             <Link
              href={anchor.path}
             className={styles['link-button']}
