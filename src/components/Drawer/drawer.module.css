@@ -1,0 +1,75 @@
+
+.core {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  background-attachment: scroll;
+  right: -200px;
+  height: 100vh;
+  background-color: var(--main-bg);
+  width: 200px;
+}
+.open {
+  animation-name: open;
+  animation-duration: 0.25s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+.close {
+  animation-name: close;
+  animation-duration: 0.25s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+.categories-list {
+  list-style: none;
+  padding-left: 0;
+}
+.category {
+  margin-top: 5px;
+  flex-basis: 100%;
+}
+.category button {
+  font-family: hind-guntur, sans-serif;
+  cursor: pointer;
+  background: black;
+  color: white;
+  border: 0;
+  padding: 10px 0;
+  height: 100%;
+  font-size: 1.1rem;
+  width: 100%;
+}
+.category ul {
+  list-style: none;
+  padding-left: 10px;
+}
+.category ul .nav-anchor button {
+  margin-top: 1px;
+  background: #013518;
+}
+
+@keyframes open {
+  from {
+    right: -200;
+  }
+  to {
+    right: 0;
+  }
+}
+@keyframes close {
+  from {
+    right: 0;
+  }
+  to {
+    right: -200;
+
+  }
+}
+
+@media screen and (min-width: 700px) {
+  /* toggle existence */
+  .core {
+    visibility: hidden;
+  }
+}
