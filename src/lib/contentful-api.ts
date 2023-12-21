@@ -51,6 +51,14 @@ export const getSinglePageData = async (contentfulId: string) => {
     if (!response) {
       throw new ReferenceError("no page data found");
     }
+    // console.log(response.fields.images);
+    const imgObj = generateImageObject(response) as Record<string, string>;
+    //overwrite imgobj with new paths
+
+    const { paragraphs, headers, buttons } = generateSectionsObject(
+      response
+    ) as sectionObjType;
+
     return response;
   } catch (error) {
     errorGenerator(error);
@@ -83,6 +91,23 @@ export function generateImageObject(data: PageDataType) {
   } catch (error) {
     if (error instanceof ReferenceError) console.error(error.message);
     else console.error("image object error");
+  }
+}
+
+export async function getSingleCarousel(id: string) {
+  try {
+    const response =
+      await client.withoutUnresolvableLinks.getEntry<TypeCarouselSkeleton>(id);
+    if (!response) {
+      throw new Error("no carousel");
+    }
+    const images = generateImageObjectCarousel(response) as {
+      imgUrl: string;
+      quoteText: string;
+    }[];
+    return images;
+  } catch (error) {
+    errorGenerator(error);
   }
 }
 
@@ -169,23 +194,23 @@ export function generateImageObjectCarousel(data: CarouselDataType) {
     const images = data.fields.carouselImages || [];
     //throw error if undefined
     if (!data.fields || images.length === 0) {
-      throw new ReferenceError('images undefined');
+      throw new ReferenceError("images undefined");
     }
     //images are stored with their title as the key and url as the value
     return images.map((img) => {
       //make sure image properties exist
       if (img !== undefined && img.fields && img.fields.title) {
         const imgData = img?.fields;
-        const imgUrl = imgData.image?.fields.file?.url || '';
-        const quoteText = imgData.quoteText || '';
+        const imgUrl = imgData.image?.fields.file?.url || "";
+        const quoteText = imgData.quoteText || "";
         return { imgUrl, quoteText };
       } else {
-        throw new ReferenceError('images undefined');
+        throw new ReferenceError("images undefined");
       }
     });
   } catch (error) {
     if (error instanceof ReferenceError) console.error(error.message);
-    else console.error('image object error');
+    else console.error("image object error");
   }
 }
 //staff member can either be admin, faculty, support, missionSociety, or
@@ -196,7 +221,11 @@ export type StaffMemberDataType = {
   role: string;
 };
 export function generateStaffCategoryObject(
-  staffArr: Entry<TypeStaffMemberSkeleton, 'WITHOUT_UNRESOLVABLE_LINKS', string>[]
+  staffArr: Entry<
+    TypeStaffMemberSkeleton,
+    "WITHOUT_UNRESOLVABLE_LINKS",
+    string
+  >[]
 ) {
   try {
     const staffObj: Record<string, StaffMemberDataType[]> = {
@@ -207,11 +236,17 @@ export function generateStaffCategoryObject(
       support: [] as StaffMemberDataType[],
     };
     staffArr.forEach(
-      (singleMemberData: Entry<TypeStaffMemberSkeleton, 'WITHOUT_UNRESOLVABLE_LINKS', string>) => {
+      (
+        singleMemberData: Entry<
+          TypeStaffMemberSkeleton,
+          "WITHOUT_UNRESOLVABLE_LINKS",
+          string
+        >
+      ) => {
         const { image, name, role, roleCategory } = singleMemberData.fields;
         const imgUrl = image?.fields.file?.url;
         if (!imgUrl) {
-          throw new ReferenceError('No image provided for staff member');
+          throw new ReferenceError("No image provided for staff member");
         }
         staffObj[roleCategory].push({ imgUrl, name, role });
       }

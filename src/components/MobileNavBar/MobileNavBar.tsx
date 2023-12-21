@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useState, useEffect } from "react";
 //components
 import { Drawer } from "@/components/Drawer";
@@ -62,12 +62,16 @@ export default function MobileNavBar() {
         show ? styles["show-bar"] : styles["dont-show-bar"]
       }`}
     >
-      <img className={styles["logo"]} src={MainLogo.src} alt="YABC Washington Irving" />
+      <img
+        className={styles["logo"]}
+        src={MainLogo.src}
+        alt="YABC Washington Irving"
+      />
       <IconButton
         onClick={(e) => handleDrawerSwitch(e, open, setOpen)}
         className={styles["hamburger"]}
       >
-        <MenuIcon fontSize="large" />
+        <MenuIcon fontSize="large" className={styles.icon} />
       </IconButton>
       <Drawer open={open} setOpen={setOpen} />
     </nav>

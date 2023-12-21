@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from './NavLinkList.module.css'
-import { NavListItemType } from "../SideNavBar/nav-utils";
+import { NavListItemType } from "../MobileNavBar/utils-NavBar";
 export default function NavLinkList({ list }: {list: NavListItemType[]} ) {
   return (
     <ul>

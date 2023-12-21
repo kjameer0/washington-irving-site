@@ -2,6 +2,7 @@
   position: sticky;
   display: flex;
   z-index: 2;
+  justify-content: space-between;
   top: 25px;
   background-color: black;
   min-height: 70px;
@@ -22,21 +23,20 @@
   margin-bottom: 0px;
   margin-left: 25px;
 }
-.hamburger {
-  position: absolute;
-  right: 25px;
-  top: 20px;
-  border: 0px solid blue;
+.icon {
   color: var(--main-bg);
+}
+.core .hamburger {
+  margin-right: 40px;
 }
 @media screen and (min-width: 700px) {
   .core {
-    /* display: none; */
+    display: none;
     margin-bottom: -5%;
     background-color: transparent;
+    visibility: hidden;
   }
   .logo {
-    visibility: hidden;
     z-index: 0;
   }
   .hamburger {

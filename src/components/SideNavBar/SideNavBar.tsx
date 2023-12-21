@@ -4,6 +4,7 @@ import { useState } from "react";
 import NavLinkList from "@/components/NavLinkList/NavLinkList";
 import Link from "next/link";
 import DownArrow from "../../../public/down-arrow.svg";
+import ExportedImage from "next-image-export-optimizer";
 import styles from "./side-nav.module.css";
 import Image from "next/image";
 //data
@@ -49,7 +50,7 @@ export default function SideNavBar() {
           <li className={styles["category"]}>
             <button className={styles['category-item']} onClick={handleCategoryClick} value="about">
               ABOUT
-              <Image
+              <ExportedImage
                 src={DownArrow}
                 alt="down arrow"
                 className={styles["down-arrow"]}
@@ -60,7 +61,7 @@ export default function SideNavBar() {
           <li className={styles["category"]}>
             <button className={styles['category-item']} onClick={handleCategoryClick} value="staff">
               STAFF
-              <Image
+              <ExportedImage
                 src={DownArrow}
                 className={styles["down-arrow"]}
                 alt="down arrow"
@@ -76,7 +77,7 @@ export default function SideNavBar() {
               value={"admissions"}
             >
               ADMISSIONS
-              <Image
+              <ExportedImage
                 src={DownArrow}
                 alt="down arrow"
                 className={styles["down-arrow"]}
@@ -91,7 +92,7 @@ export default function SideNavBar() {
             <button
             className={styles['category-item']} onClick={handleCategoryClick} value={"student-corner"}>
               STUDENT CORNER
-              <Image
+              <ExportedImage
                 src={DownArrow}
                 alt="down arrow"
                 className={styles["down-arrow"]}
@@ -110,7 +111,7 @@ export default function SideNavBar() {
             <button
             className={styles['category-item']} onClick={handleCategoryClick} value={"parents-families"}>
               PARENTS/FAMILIES
-              <Image
+              <ExportedImage
                 src={DownArrow}
                 alt="down arrow"
                 className={styles["down-arrow"]}
@@ -124,7 +125,7 @@ export default function SideNavBar() {
             <button
             className={styles['category-item']} onClick={handleCategoryClick} value={"teacher-hub"}>
               TEACHER HUB
-              <Image
+              <ExportedImage
                 src={DownArrow}
                 alt="down arrow"
                 className={styles["down-arrow"]}
@@ -142,7 +143,7 @@ export default function SideNavBar() {
 
             >
               STUDENT SUPPORT ACTIVITIES
-              <Image
+              <ExportedImage
                 src={DownArrow}
                 alt="down arrow"
                 className={styles["down-arrow"]}
