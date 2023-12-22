@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import SideNavBar from "@/components/SideNavBar/SideNavBar";
+
 import MobileNavBar from "@/components/MobileNavBar/MobileNavBar";
 import Banner from "@/components/Banner/Banner";
+import Footer from "@/components/Footer/Footer";
 export const inter = localFont({
   src: "../../public/fonts/Inter/Inter-VariableFont_slnt,wght.ttf",
   variable: "--font-inter",
@@ -25,6 +27,7 @@ export default function RootLayout({
         <MobileNavBar />
         <SideNavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
