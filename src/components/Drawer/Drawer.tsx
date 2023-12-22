@@ -21,6 +21,7 @@ import styles from './drawer.module.css'
 export default function Drawer({ open, setOpen }: DrawerProps) {
   const [activeList, setActiveList] = useState("");
   const animationRef = useRef(null);
+  
   function handleCategoryClick(evt: React.MouseEvent<HTMLButtonElement>) {
     evt.stopPropagation();
     if (activeList === evt.currentTarget.value) {

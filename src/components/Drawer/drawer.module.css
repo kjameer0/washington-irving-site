@@ -29,7 +29,7 @@
   margin-top: 5px;
   flex-basis: 100%;
 }
-.category button {
+.category button, .category > a {
   font-family: hind-guntur, sans-serif;
   cursor: pointer;
   background: black;
@@ -39,6 +39,10 @@
   height: 100%;
   font-size: 1.1rem;
   width: 100%;
+}
+.category > a {
+  display: block;
+  text-decoration: none;
 }
 .category ul {
   list-style: none;

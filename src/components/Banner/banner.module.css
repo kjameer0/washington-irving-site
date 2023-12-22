@@ -1,0 +1,39 @@
+.banner-wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  left: 0;
+  z-index: 2;
+  background: var(--main-bg);
+}
+/* spans that contain top banner text */
+.banner {
+  font-family: hind-guntur-semibold, sans-serif;
+  position: relative;
+  bottom: 2px;
+  font-size: 1.3rem;
+  color: red;
+  height: 100%;
+  left: 100%;
+  animation-name: text-slide-in;
+  animation-duration: 45s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+}
+/* spaces bullet points in
+banner text*/
+.banner-bullet {
+  margin: 0 5px;
+}
+
+@keyframes text-slide-in {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -150%;
+  }
+}

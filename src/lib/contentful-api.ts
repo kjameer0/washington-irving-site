@@ -9,6 +9,7 @@ import {
   isTypeLinkText,
   isTypeButtonInformation,
   TypeStaffMemberSkeleton,
+  TypeBannerTextSkeleton
 } from "./types/contentful-types";
 import * as dotenv from "dotenv";
 import { Entry, Asset } from "contentful";
@@ -91,6 +92,18 @@ export function generateImageObject(data: PageDataType) {
   } catch (error) {
     if (error instanceof ReferenceError) console.error(error.message);
     else console.error("image object error");
+  }
+}
+export async function getBannerText() {
+  try {
+    const response = await client.getEntry<TypeBannerTextSkeleton>('nNVYy3RFpDviJNRD8bvZy');
+    if (!response) {
+      throw new ReferenceError('no banner text found');
+    }
+    const bannerData = response.fields.text;
+    return bannerData;
+  } catch (error: unknown) {
+    errorGenerator(error);
   }
 }
 
