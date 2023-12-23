@@ -206,7 +206,7 @@ a:hover {
   main {
     position: relative;
     margin-top: 35px;
-    margin-left: 10px;
+    margin-left: 20px;
     flex-basis: calc(90% - 160px);
     left: clamp(200px, 21vw, 255px);
   }

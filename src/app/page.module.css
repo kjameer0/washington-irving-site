@@ -103,6 +103,9 @@
   width: 100%;
   justify-self: center;
 }
+.carousel-wrapper > div  {
+  width: 50%;
+}
 .carousel-root {
   width: 100%;
   min-width: 150px;

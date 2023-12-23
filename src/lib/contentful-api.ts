@@ -9,7 +9,7 @@ import {
   isTypeLinkText,
   isTypeButtonInformation,
   TypeStaffMemberSkeleton,
-  TypeBannerTextSkeleton
+  TypeBannerTextSkeleton,
 } from "./types/contentful-types";
 import * as dotenv from "dotenv";
 import { Entry, Asset } from "contentful";
@@ -52,14 +52,6 @@ export const getSinglePageData = async (contentfulId: string) => {
     if (!response) {
       throw new ReferenceError("no page data found");
     }
-    // console.log(response.fields.images);
-    const imgObj = generateImageObject(response) as Record<string, string>;
-    //overwrite imgobj with new paths
-
-    const { paragraphs, headers, buttons } = generateSectionsObject(
-      response
-    ) as sectionObjType;
-
     return response;
   } catch (error) {
     errorGenerator(error);
@@ -96,9 +88,11 @@ export function generateImageObject(data: PageDataType) {
 }
 export async function getBannerText() {
   try {
-    const response = await client.getEntry<TypeBannerTextSkeleton>('nNVYy3RFpDviJNRD8bvZy');
+    const response = await client.getEntry<TypeBannerTextSkeleton>(
+      "nNVYy3RFpDviJNRD8bvZy"
+    );
     if (!response) {
-      throw new ReferenceError('no banner text found');
+      throw new ReferenceError("no banner text found");
     }
     const bannerData = response.fields.text;
     return bannerData;
@@ -119,6 +113,33 @@ export async function getSingleCarousel(id: string) {
       quoteText: string;
     }[];
     return images;
+  } catch (error) {
+    errorGenerator(error);
+  }
+}
+export async function getGraduateCarousels() {
+  try {
+    const response =
+      await client.withoutUnresolvableLinks.getEntries<TypeCarouselSkeleton>({
+        content_type: "carousel",
+        "fields.year[exists]": true,
+      });
+    if (!response) {
+      throw new Error("no carousel");
+    }
+    const carousels = response.items.sort(
+      (a, b) => Number(a.fields.year) - Number(b.fields.year)
+    );
+    const latestYear: number = Number(
+      carousels[carousels.length - 1].fields.year
+    );
+    const carouselsSorted = carousels.map((carousel) =>
+      generateImageObjectCarousel(carousel)
+    ).slice(-3);
+    return {
+      carousels: carouselsSorted,
+      latestYear,
+    };
   } catch (error) {
     errorGenerator(error);
   }
@@ -214,7 +235,7 @@ export function generateImageObjectCarousel(data: CarouselDataType) {
       //make sure image properties exist
       if (img !== undefined && img.fields && img.fields.title) {
         const imgData = img?.fields;
-        const imgUrl = imgData.image?.fields.file?.url || "";
+        const imgUrl = "https:" + imgData.image?.fields.file?.url || "";
         const quoteText = imgData.quoteText || "";
         return { imgUrl, quoteText };
       } else {

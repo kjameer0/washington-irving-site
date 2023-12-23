@@ -17,7 +17,6 @@ export default async function Home() {
     throw new Error("no pageData");
   }
   const imgObj = generateImageObject(pageData) as Record<string, string>;
-  console.log(imgObj);
   const { paragraphs, headers, buttons } = generateSectionsObject(
     pageData
   ) as sectionObjType;

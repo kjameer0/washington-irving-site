@@ -21,7 +21,7 @@ import styles from './drawer.module.css'
 export default function Drawer({ open, setOpen }: DrawerProps) {
   const [activeList, setActiveList] = useState("");
   const animationRef = useRef(null);
-  
+
   function handleCategoryClick(evt: React.MouseEvent<HTMLButtonElement>) {
     evt.stopPropagation();
     if (activeList === evt.currentTarget.value) {
@@ -29,7 +29,6 @@ export default function Drawer({ open, setOpen }: DrawerProps) {
     } else setActiveList(evt.currentTarget.value);
   }
 
-  console.count()
   return (
     <nav ref={animationRef} className={`${styles['core']} ${open === 'none'? '' : styles[open]}`}>
       <ul className={styles["categories-list"]}>

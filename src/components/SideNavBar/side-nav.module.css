@@ -4,7 +4,7 @@
   left: 0;
   display: none;
   background-color: var(--main-bg);
-  width: clamp(202px, 21vw, 255px);
+  width: clamp(215px, 22vw, 255px);
   height: 100% !important;
   overflow-y: scroll;
   overflow-x: hidden;

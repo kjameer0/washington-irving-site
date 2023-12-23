@@ -11,6 +11,7 @@
     "export": "ts-node-esm scripts/load-remote.ts && next-image-export-optimizer"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.19.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.0",
