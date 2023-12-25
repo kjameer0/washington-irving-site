@@ -2,6 +2,7 @@
 import Carousel from "../Carousel/Carousel";
 import styles from "./graduate-carousel-selector.module.css";
 import { useState } from "react";
+import '@/app/globals.css'
 type GraduateCarouselSelectorPropType = {
   mostRecentYear: number;
   carousels: ({ imgUrl: string; quoteText: string }[] | undefined)[];
@@ -20,7 +21,7 @@ export default function GraduateCarouselSelector({
         onChange={(e) => {
           setCurrentYear(Number(e.target.value));
         }}
-        className="year-select"
+        className={styles["year-select"]}
         value={currentYear}
       >
         {yearsList.map((year: number) => (

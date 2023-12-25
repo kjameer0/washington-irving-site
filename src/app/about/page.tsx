@@ -1,9 +1,14 @@
 import HeroImage from "@/components/HeroImage/HeroImage";
 //utils
 import { richTextLinkOptions } from "@/lib/rich-text-options";
+import styles from './page.module.css'
 //hooks
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { getSinglePageData, getSingleCarousel, getGraduateCarousels } from "@/lib/contentful-api";
+import {
+  getSinglePageData,
+  getSingleCarousel,
+  getGraduateCarousels,
+} from "@/lib/contentful-api";
 import GraduateCarouselSelector from "@/components/GraduateCarouselSelector/GraduateCarouselSelector";
 import {
   generateSectionsObject,
@@ -19,7 +24,7 @@ export default async function About() {
   if (!pageData || !graduateCarouselsData) {
     throw new Error("no pageData");
   }
-  const {carousels, latestYear} = graduateCarouselsData;
+  const { carousels, latestYear } = graduateCarouselsData;
   const imgObj = generateImageObject(pageData) as Record<string, string>;
   const { paragraphs, headers, buttons, lists, links } = generateSectionsObject(
     pageData
@@ -99,8 +104,11 @@ export default async function About() {
       <h2 className="major-heading" id="meet-our-graduates">
         {headers.graduateHeading.mainHeading}
       </h2>
-      <div className="carousel-wrapper">
-<GraduateCarouselSelector carousels={carousels} mostRecentYear={latestYear} />
+      <div className={styles["carousel-wrapper"]}>
+        <GraduateCarouselSelector
+          carousels={carousels}
+          mostRecentYear={latestYear}
+        />
       </div>
     </main>
   );

@@ -1,8 +1,21 @@
 "use client";
-import ReactSimplyCarousel from "react-simply-carousel";
-import { useState } from "react";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+import { useState, useEffect } from "react";
 import styles from "./carousel.module.css";
-export default function Carousel({
+
+export const CarouselStyles = {
+  minHeight: "230px",
+  width: "100%",
+};
+export const CarouselImgStyles = {
+  maxWidth: "280px",
+  border: "3px solid white",
+  height: "auto",
+};
+
+export default function CarouselFactory({
   carousel,
 }: {
   carousel:
@@ -13,68 +26,35 @@ export default function Carousel({
     | undefined;
 }) {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-  console.log(activeSlideIndex)
+
   return (
-    <ReactSimplyCarousel
-      activeSlideIndex={activeSlideIndex}
-      onRequestChange={setActiveSlideIndex}
-      itemsToShow={1}
-      itemsToScroll={1}
-      forwardBtnProps={{
-        //here you can also pass className, or any other button element attributes
-        style: {
-          alignSelf: "center",
-          background: "blue",
-          border: "none",
-          borderRadius: "50%",
-          color: "white",
-          cursor: "pointer",
-          fontSize: "20px",
-          height: 30,
-          lineHeight: 1,
-          textAlign: "center",
-          width: 30,
-        },
-        children: <span key={crypto.randomUUID()}>{`>`}</span>,
-      }}
-      backwardBtnProps={{
-        //here you can also pass className, or any other button element attributes
-        style: {
-          alignSelf: "center",
-          background: "black",
-          border: "none",
-          borderRadius: "50%",
-          color: "white",
-          cursor: "pointer",
-          fontSize: "20px",
-          height: 30,
-          lineHeight: 1,
-          textAlign: "center",
-          width: 30,
-        },
-        children: <span>{`<`}</span>,
-      }}
-      responsiveProps={[
-        {
-          minWidth: 700,
-        },
-      ]}
-      speed={200}
-      easing="linear"
+    <Carousel
+      showStatus={false}
+      showArrows={true}
+      showThumbs={false}
+      infiniteLoop={true}
+      transitionTime={0}
+      selectedItem={activeSlideIndex}
+      onChange={(idx) => setActiveSlideIndex(idx)}
     >
       {carousel &&
         carousel.map((imgData, index) => {
           return (
-            <div key={crypto.randomUUID()} className={styles["core"]}>
+            <div
+              key={crypto.randomUUID()}
+              className={styles["core"]}
+              style={CarouselStyles}
+            >
               <img
-                // className={styles["core"]}
+                style={CarouselImgStyles}
                 src={imgData.imgUrl}
                 alt={imgData.quoteText || ""}
+                key={crypto.randomUUID()}
               />
               <p>{imgData.quoteText || ""}</p>
             </div>
           );
         })}
-    </ReactSimplyCarousel>
+    </Carousel>
   );
 }

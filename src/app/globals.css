@@ -186,7 +186,30 @@ a:hover {
 .banner-bullet {
   margin: 0 5px;
 }
-@keyframes text-slide-in {
+.carousel-root {
+}
+.carousel {
+  min-height: 250px;
+  height: 100%;
+  /* width: 100%; */
+}
+.carousel img {
+  /* width: 80%; */
+  margin-bottom: 35px;
+}
+/* the dots that show which picture we're looking at*/
+.control-dots {
+  left: 0%;
+  width: 80%;
+  margin: 0;
+  li {
+    width: 10px;
+    height: 10px;
+    margin: 2px 4px;
+  }
+}
+
+ @keyframes text-slide-in {
   0% {
     left: 100%;
   }

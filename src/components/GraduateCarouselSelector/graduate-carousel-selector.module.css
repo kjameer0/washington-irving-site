@@ -1,3 +1,10 @@
-.core {
-  
+.year-select {
+  margin-top: 40px;
+  padding: 4px;
+  width: 40%;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  text-align: center;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
 }

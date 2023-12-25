@@ -1,0 +1,8 @@
+.carousel-wrapper {
+  min-height: 180px;
+  position: relative;
+  left: 25%;
+  width: 50%;
+}
+.carousel-wrapper .carousel-root {
+}
