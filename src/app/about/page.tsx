@@ -1,14 +1,10 @@
 import HeroImage from "@/components/HeroImage/HeroImage";
 //utils
 import { richTextLinkOptions } from "@/lib/rich-text-options";
-import styles from './page.module.css'
+import styles from "./page.module.css";
 //hooks
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import {
-  getSinglePageData,
-  getSingleCarousel,
-  getGraduateCarousels,
-} from "@/lib/contentful-api";
+import { getSinglePageData, getGraduateCarousels } from "@/lib/contentful-api";
 import GraduateCarouselSelector from "@/components/GraduateCarouselSelector/GraduateCarouselSelector";
 import {
   generateSectionsObject,
@@ -30,7 +26,7 @@ export default async function About() {
     pageData
   ) as sectionObjType;
   return (
-    <main>
+    <main className={styles.core}>
       <HeroImage
         id="students-sitting-hero"
         imgLink={imgObj.abouthero}
@@ -38,16 +34,18 @@ export default async function About() {
         color="white"
       />
       <h1 className="major-heading">{headers.pageTitle.mainHeading}</h1>
-      <section className="attend-info">
-        <h2 className="attend-info-h2">
+      <section className={styles["attend-info"]}>
+        <h2 className={styles["attend-info-h2"]}>
           {headers.registrationHeading.mainHeading}
         </h2>
         <p className="para-content">{paragraphs.registrationPara.content}</p>
-        <p className="attend-info-h2">{paragraphs.orientationPara.content}</p>
+        <p className={styles["attend-info-h2"]}>
+          {paragraphs.orientationPara.content}
+        </p>
         <p className="para-content">
           {paragraphs.registrationLocationPara.content}
         </p>
-        <h2 className="attend-info-h2">
+        <h2 className={styles["attend-info-h2"]}>
           {documentToReactComponents(
             links.zoomLink as ContentfulDocumentType,
             richTextLinkOptions
@@ -56,7 +54,7 @@ export default async function About() {
         <p className="para-content">
           {paragraphs.inPersonRegistrationPara.content}
         </p>
-        <h2 className="attend-info-h2">
+        <h2 className={styles["attend-info-h2"]}>
           {headers.openHouseHeading.mainHeading}
         </h2>
         <p className="para-content">
@@ -66,29 +64,32 @@ export default async function About() {
         <a href="/contact" className={"navlink"}>
           {headers.attendButtonLabel.mainHeading}
         </a>
-        <br className="link-line-break" />
+        <br className={styles["link-line-break"]} />
         <a href="/admissions" className={"navlink"}>
-          {headers.admissionsButtonLabel.mainHeading}{" "}
+          {headers.admissionsButtonLabel.mainHeading}
         </a>
       </section>
-      <div className="line-separate"></div>
-      <section id="are-we-a-fit" className="good-fit-section">
+      <div className={styles["line-separate"]}></div>
+      <section id="are-we-a-fit" className={styles["good-fit-section"]}>
         <header>
           <h2 className="major-heading">{headers.fitHeading.mainHeading}</h2>
-          <p className="sub-heading good-fit-header-p">
+          <p className={"sub-heading" + " " + styles["good-fit-header-p"]}>
             {headers.fitHeading.subHeading}
           </p>
         </header>
-        <section className="requirements" id="eligibility-requirements">
-          <h4 className="requirements-h4 sub-heading">
+        <section
+          className={styles["requirements"]}
+          id="eligibility-requirements"
+        >
+          <h4 className={styles["requirements-h4"] + " " + "sub-heading"}>
             {headers.eligibilityHeading.mainHeading}
           </h4>
-          <ul className="requirements-ul">
+          <ul className={styles["requirements-ul"]}>
             {lists.eligibilityList.listContent.map((item: string) => {
               return (
                 <li
                   key={crypto.randomUUID()}
-                  className="para-content requirements-li"
+                  className={"para-content" + " " + styles["requirements-li"]}
                 >
                   {item}
                 </li>
@@ -100,7 +101,7 @@ export default async function About() {
         <p className="para-content">{paragraphs.servePara.content}</p>
         <p className="para-content">{paragraphs.supportPara.content}</p>
       </section>
-      <div className="line-separate"></div>
+      <div className={styles["line-separate"]}></div>
       <h2 className="major-heading" id="meet-our-graduates">
         {headers.graduateHeading.mainHeading}
       </h2>

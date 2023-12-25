@@ -187,20 +187,21 @@ a:hover {
   margin: 0 5px;
 }
 .carousel-root {
+  display: block;
 }
 .carousel {
   min-height: 250px;
   height: 100%;
-  /* width: 100%; */
 }
+
 .carousel img {
-  /* width: 80%; */
   margin-bottom: 35px;
 }
+
 /* the dots that show which picture we're looking at*/
 .control-dots {
   left: 0%;
-  width: 80%;
+  width: 90%;
   margin: 0;
   li {
     width: 10px;
