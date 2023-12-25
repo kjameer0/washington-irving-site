@@ -2,14 +2,13 @@ import styles from "./page.module.css";
 import HeroImage from "@/components/HeroImage/HeroImage";
 import Carousel from "@/components/Carousel/Carousel";
 import ExportedImage from "next-image-export-optimizer";
-
-//fetch
-import { getSinglePageData, getSingleCarousel } from "../lib/contentful-api";
 import {
   generateSectionsObject,
   generateImageObject,
   sectionObjType,
-} from "../lib/contentful-api";
+  getSinglePageData,
+  getSingleCarousel
+} from "@/lib/contentful-api";
 export default async function Home() {
   const pageData = await getSinglePageData("7yhGH9U8xAnRRgnC76CcAC");
   const carousel = await getSingleCarousel("6HNgzL9333zge8eEXDZV9R");
