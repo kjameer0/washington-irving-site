@@ -133,9 +133,9 @@ export async function getGraduateCarousels() {
     const latestYear: number = Number(
       carousels[carousels.length - 1].fields.year
     );
-    const carouselsSorted = carousels.map((carousel) =>
-      generateImageObjectCarousel(carousel)
-    ).slice(-3);
+    const carouselsSorted = carousels
+      .map((carousel) => generateImageObjectCarousel(carousel))
+      .slice(-3);
     return {
       carousels: carouselsSorted,
       latestYear,
@@ -254,6 +254,23 @@ export type StaffMemberDataType = {
   imgUrl: string;
   role: string;
 };
+export async function getStaffMembers() {
+  try {
+    const response =
+      await client.withoutUnresolvableLinks.getEntries<TypeStaffMemberSkeleton>(
+        {
+          content_type: "staffMember",
+        }
+      );
+    const generatedStaffObj = generateStaffCategoryObject(response.items);
+    if (!generatedStaffObj) {
+      throw new ReferenceError("no staff members");
+    }
+    return generatedStaffObj;
+  } catch (error) {
+    errorGenerator(error);
+  }
+}
 export function generateStaffCategoryObject(
   staffArr: Entry<
     TypeStaffMemberSkeleton,
@@ -278,7 +295,7 @@ export function generateStaffCategoryObject(
         >
       ) => {
         const { image, name, role, roleCategory } = singleMemberData.fields;
-        const imgUrl = image?.fields.file?.url;
+        const imgUrl = "https:" + image?.fields.file?.url;
         if (!imgUrl) {
           throw new ReferenceError("No image provided for staff member");
         }

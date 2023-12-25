@@ -4,12 +4,13 @@ import { richTextLinkOptions } from "@/lib/rich-text-options";
 import styles from "./page.module.css";
 //hooks
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { getSinglePageData, getGraduateCarousels } from "@/lib/contentful-api";
 import GraduateCarouselSelector from "@/components/GraduateCarouselSelector/GraduateCarouselSelector";
 import {
   generateSectionsObject,
   generateImageObject,
   sectionObjType,
+  getSinglePageData,
+  getGraduateCarousels,
 } from "@/lib/contentful-api";
 //styles
 import { Document as ContentfulDocumentType } from "@contentful/rich-text-types";
