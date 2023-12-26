@@ -5,7 +5,6 @@ import { richTextLinkOptions } from "@/lib/rich-text-options";
 import { Document as ContentfulDocumentType } from "@contentful/rich-text-types";
 import {
   generateSectionsObject,
-  generateImageObject,
   sectionObjType,
   getSinglePageData,
 } from "@/lib/contentful-api";

@@ -187,11 +187,19 @@ a:hover {
   margin: 0 5px;
 }
 .carousel-root {
-  display: block;
+  /* display: block; */
+}
+.carousel-root p {
+  font-family: Inter-black;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  margin-top: -50px;
 }
 .carousel {
   min-height: 250px;
   height: 100%;
+}
+.student-carousel-wrapper .carousel-root {
+  width: 100%;
 }
 
 .carousel img {
@@ -203,14 +211,14 @@ a:hover {
   left: 0%;
   width: 90%;
   margin: 0;
-  li {
-    width: 10px;
-    height: 10px;
-    margin: 2px 4px;
-  }
+}
+.control-dots li {
+  width: 10px;
+  height: 10px;
+  margin: 2px 4px;
 }
 
- @keyframes text-slide-in {
+@keyframes text-slide-in {
   0% {
     left: 100%;
   }

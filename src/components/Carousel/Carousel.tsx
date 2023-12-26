@@ -7,11 +7,12 @@ import styles from "./carousel.module.css";
 
 export const CarouselStyles = {
   minHeight: "230px",
-  width: "100%",
+  width: "inherit",
 };
 export const CarouselImgStyles = {
   maxWidth: "280px",
   border: "3px solid white",
+  marginBottom: "50px",
   height: "auto",
 };
 
