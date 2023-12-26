@@ -22,7 +22,7 @@ jobs:
           API_KEY: ${{ env.API_KEY }}
           SPACE_KEY: ${{ env.SPACE_KEY }}
       - name: Archive production artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: out
           path: out/
@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: out
           path: out
@@ -42,7 +42,7 @@ jobs:
       - name: Setup Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v1
 
-      - name: Upload assets to Cloud Storage
+      - name: Upload files to Cloud Storage
         uses: google-github-actions/upload-cloud-storage@v2
         env:
           GCS_BUCKET: ${{ secrets.GCS_BUCKET }}
@@ -51,4 +51,18 @@ jobs:
           destination: ${{ secrets.GCS_BUCKET }}
           glob: '*'
           parent: false
+      - name: Upload _next to Cloud Storage
+        uses: google-github-actions/upload-cloud-storage@v2
+        env:
+          GCS_BUCKET: ${{ secrets.GCS_BUCKET }}
+        with:
+          path: out/_next
+          destination: ${{ secrets.GCS_BUCKET }}
+      - name: Upload fonts to Cloud Storage
+        uses: google-github-actions/upload-cloud-storage@v2
+        env:
+          GCS_BUCKET: ${{ secrets.GCS_BUCKET }}
+        with:
+          path: out/fonts
+          destination: ${{ secrets.GCS_BUCKET }}
 
