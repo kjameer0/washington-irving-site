@@ -212,7 +212,7 @@
     background: black;
     width: 90%;
   }
-  .school-library-section .navlink {
+  .school-library-section a {
     position: relative;
     left: 25%;
     width: 50%;

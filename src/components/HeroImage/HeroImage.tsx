@@ -16,9 +16,9 @@ export default function HeroImage({
       style={{ backgroundImage: `url(${imgLink})` }}
       className={styles["hero-image-container"]}
     >
-      <div className={styles["words-wrapper"]}>
+      <div className={`${styles["words-wrapper"]} word-wrapper`}>
         {text.map((word) => (
-          <p className={styles["single-word"]} key={word}>
+          <p className={`${styles["single-word"]} single-word`} key={word}>
             {word}
           </p>
         ))}

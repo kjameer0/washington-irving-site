@@ -186,9 +186,6 @@ a:hover {
 .banner-bullet {
   margin: 0 5px;
 }
-.carousel-root {
-  /* display: block; */
-}
 .carousel-root p {
   font-family: Inter-black;
   font-size: clamp(1rem, 3vw, 1.5rem);
@@ -216,6 +213,25 @@ a:hover {
   width: 10px;
   height: 10px;
   margin: 2px 4px;
+}
+#learn-to-work-hero,
+#services-hero {
+  height: clamp(180px, 6vw, 300px);
+}
+/* overwrite default word styles of hero image */
+#learn-to-work-hero .single-word,
+#services-hero .single-word {
+  font-family: Inter-bold;
+  font-size: clamp(1rem, 3vw, 2.5rem);
+}
+/* these styles dont affect the first three words */
+#learn-to-work-hero .words-wrapper p:nth-child(n + 3) {
+  margin-top: 14px;
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
+}
+#services-hero .words-wrapper p:nth-child(2) {
+  margin-top: 14px;
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
 }
 
 @keyframes text-slide-in {
