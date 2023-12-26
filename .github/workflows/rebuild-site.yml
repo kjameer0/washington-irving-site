@@ -50,4 +50,5 @@ jobs:
           path: out
           destination: ${{ secrets.GCS_BUCKET }}
           glob: '*'
+          parent: false
 
