@@ -20,12 +20,17 @@ export default function NotFound() {
     if (typeof window !== "undefined") {
       console.log(window.location.pathname);
       if (!pages.has(window.location.pathname.slice(1))) {
-        console.log(window.location.host);
-        redirect("/");
+        setTimeout(() => {
+          console.log(window.location.host);
+          redirect("/");
+        },1000)
       } else {
         console.log(window.location.hash)
-        let hash = window.location.hash;
-        redirect(window.location.pathname + ".html" + hash);
+        setTimeout(() => {
+          let hash = window.location.hash;
+          redirect(window.location.pathname + ".html" + hash);
+
+        },1000)
       }
     }
   }, []);
