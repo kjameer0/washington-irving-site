@@ -36,7 +36,6 @@ export default function RootLayout({
       </body>
       <Script
       id="redirect-script"
-        strategy="beforeInteractive"
       >
 {(function direct(l): any {
         if (l.search[1] === '/' ) {
