@@ -6,6 +6,7 @@ import SideNavBar from "@/components/SideNavBar/SideNavBar";
 import MobileNavBar from "@/components/MobileNavBar/MobileNavBar";
 import Banner from "@/components/Banner/Banner";
 import Footer from "@/components/Footer/Footer";
+import { ReactNode } from "react";
 export const inter = localFont({
   src: "../../public/fonts/Inter/Inter-VariableFont_slnt,wght.ttf",
   variable: "--font-inter",
@@ -34,19 +35,27 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
-      <Script
-      id="redirect-script"
-      >
-{(function direct(l): any {
-        if (l.search[1] === '/' ) {
-          let decoded = l.search.slice(1).split('&').map(function(s) {
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, '',
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
-        }
-      }(window.location))}
+      <Script id="redirect-script">
+        {(() => {
+          if (typeof window !== "undefined") {
+            let l = window.location;
+            if (l.search[1] === "/") {
+              let decoded = l.search
+                .slice(1)
+                .split("&")
+                .map(function (s) {
+                  return s.replace(/~and~/g, "&");
+                })
+                .join("?");
+              window.history.replaceState(
+                null,
+                "",
+                l.pathname.slice(0, -1) + decoded + l.hash
+              );
+            }
+          }
+          return (<></>) as ReactNode;
+        })()}
       </Script>
     </html>
   );
