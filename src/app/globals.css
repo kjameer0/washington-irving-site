@@ -132,7 +132,7 @@ a:hover {
   font-family: Inria-serif-bold-italic;
   font-size: clamp(1.1rem, 2vw, 1.6rem);
 }
-/* all links styled to look like buttons */
+/* all links styled to look like buttons. */
 .navlink {
   text-decoration: none;
   display: block;

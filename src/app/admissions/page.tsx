@@ -36,7 +36,10 @@ export default async function Admissions() {
           {paragraphs.enrollmentProcessPara.content}
         </p>
       </section>
-      <section className={styles["admissions-info-section"]} id="admissions-information">
+      <section
+        className={styles["admissions-info-section"]}
+        id="admissions-information"
+      >
         <h2 className="sub-heading">
           {headers.admissionsInfoHeading.mainHeading}
         </h2>
@@ -75,10 +78,16 @@ export default async function Admissions() {
             {headers.howHeading.mainHeading}
           </p>
         </header>
-        <h3 className={styles["enroll-step-h3"]}>{headers.step1Heading.mainHeading}</h3>
+        <h3 className={styles["enroll-step-h3"]}>
+          {headers.step1Heading.mainHeading}
+        </h3>
         <p className="para-content">{paragraphs.step1Para.content}</p>
-        <h3 className={styles["enroll-step-h3"]}>{headers.step2Heading.mainHeading}</h3>
-        <p className={styles["enroll-step-bold-p"]}>{paragraphs.step2Para.content}</p>
+        <h3 className={styles["enroll-step-h3"]}>
+          {headers.step2Heading.mainHeading}
+        </h3>
+        <p className={styles["enroll-step-bold-p"]}>
+          {paragraphs.step2Para.content}
+        </p>
         <ul className={styles["step-ul"]}>
           {lists.step2List.listContent.map((item: string) => {
             return (
@@ -92,9 +101,13 @@ export default async function Admissions() {
         <p className={styles["enroll-step-bold-p"]}>
           {paragraphs.enrollmentContactPara.content}
         </p>
-        <h3 className={styles["enroll-step-h3"]}>{headers.step3Heading.mainHeading}</h3>
-        <p className={styles["enroll-step-bold-p"]}>{paragraphs.callPara.content}</p>
-        <p className="para-content">{paragraphs.pendingPara.content}</p>
+        <h3 className={styles["enroll-step-h3"]}>
+          {headers.step3Heading.mainHeading}
+        </h3>
+        <p className={styles["enroll-step-bold-p"]}>
+          {paragraphs.callPara.content}
+        </p>
+        <p className="para-content ">{paragraphs.pendingPara.content}</p>
         <ul className={styles["step-ul"]}>
           {lists.phoneNumberList.listContent.map((item: string) => {
             return (
@@ -105,7 +118,9 @@ export default async function Admissions() {
           })}
         </ul>
         <p className="para-content">{paragraphs.voicemailPara.content}</p>
-        <h3 className={styles["enroll-step-h3"]}>{headers.step4Heading.mainHeading}</h3>
+        <h3 className={styles["enroll-step-h3"]}>
+          {headers.step4Heading.mainHeading}
+        </h3>
         <p className={styles["enroll-step-bold-p"]}>
           {paragraphs.acceptancePara.content}{" "}
         </p>
@@ -151,16 +166,23 @@ export default async function Admissions() {
           {buttons.y2Form.buttonText}
         </a>
       </div>
-      <section className={styles["faq-section"]} id="frequently-asked-questions">
+      <section
+        className={styles["faq-section"]}
+        id="frequently-asked-questions"
+      >
         <h2 className="sub-heading">{headers.faqHeading.mainHeading}</h2>
-        <section className={`${styles["faq-question-section"]} ${styles["regular-instruction"]}`}>
+        <section
+          className={`${styles["faq-question-section"]} ${styles["regular-instruction"]}`}
+        >
           <h3 className={styles["faq-h3"]}>
             {headers.regularQuestionHeading.mainHeading}
           </h3>
           <p>{paragraphs.regularQuestionPara1.content}</p>
           <p>{paragraphs.regularQuestionPara2.content}</p>
         </section>
-        <section className={`${styles["faq-question-section"]} ${styles["shared-instruction"]}`}>
+        <section
+          className={`${styles["faq-question-section"]} ${styles["shared-instruction"]}`}
+        >
           <h3 className={styles["faq-h3"]}>
             {headers.sharedQuestionHeading.mainHeading}
           </h3>
