@@ -32,7 +32,7 @@ export default function SideNavBar() {
   return (
     <nav className={styles.core}>
       <div className={`${styles["img-wrapper"]}`}>
-        <Link href="/">
+        <Link href="/" prefetch={true}>
           <img
             className="logo"
             src={MainLogo.src}
@@ -43,12 +43,19 @@ export default function SideNavBar() {
       <nav className={styles.nav}>
         <ul className={styles["categories-list"]}>
           <li className={styles["category"]}>
-            <Link className={`${styles.link} ${styles['category-item']}`} href={"/"}>
+            <Link
+              className={`${styles.link} ${styles["category-item"]}`}
+              href={"/"}
+            >
               <span>HOME</span>
             </Link>
           </li>
           <li className={styles["category"]}>
-            <button className={styles['category-item']} onClick={handleCategoryClick} value="about">
+            <button
+              className={styles["category-item"]}
+              onClick={handleCategoryClick}
+              value="about"
+            >
               ABOUT
               <ExportedImage
                 src={DownArrow}
@@ -59,7 +66,11 @@ export default function SideNavBar() {
             {activeList === "about" && <NavLinkList list={aboutPaths} />}
           </li>
           <li className={styles["category"]}>
-            <button className={styles['category-item']} onClick={handleCategoryClick} value="staff">
+            <button
+              className={styles["category-item"]}
+              onClick={handleCategoryClick}
+              value="staff"
+            >
               STAFF
               <ExportedImage
                 src={DownArrow}
@@ -71,7 +82,7 @@ export default function SideNavBar() {
           </li>
           <li className={styles["category"]}>
             <button
-            className={styles['category-item']}
+              className={styles["category-item"]}
               onClick={handleCategoryClick}
               id="admissions-button"
               value={"admissions"}
@@ -90,7 +101,10 @@ export default function SideNavBar() {
           </li>
           <li className={styles["category"]}>
             <button
-            className={styles['category-item']} onClick={handleCategoryClick} value={"student-corner"}>
+              className={styles["category-item"]}
+              onClick={handleCategoryClick}
+              value={"student-corner"}
+            >
               STUDENT CORNER
               <ExportedImage
                 src={DownArrow}
@@ -103,13 +117,20 @@ export default function SideNavBar() {
             )}
           </li>
           <li className={styles["category"]}>
-            <Link className={`${styles.link} ${styles['category-item']}`} href="/counselor-corner">
+            <Link
+              className={`${styles.link} ${styles["category-item"]}`}
+              href="/counselor-corner"
+              prefetch={true}
+            >
               <span>COUNSELOR&apos;S CORNER</span>
             </Link>
           </li>
           <li className={styles["category"]}>
             <button
-            className={styles['category-item']} onClick={handleCategoryClick} value={"parents-families"}>
+              className={styles["category-item"]}
+              onClick={handleCategoryClick}
+              value={"parents-families"}
+            >
               PARENTS/FAMILIES
               <ExportedImage
                 src={DownArrow}
@@ -123,7 +144,10 @@ export default function SideNavBar() {
           </li>
           <li className={styles["category"]}>
             <button
-            className={styles['category-item']} onClick={handleCategoryClick} value={"teacher-hub"}>
+              className={styles["category-item"]}
+              onClick={handleCategoryClick}
+              value={"teacher-hub"}
+            >
               TEACHER HUB
               <ExportedImage
                 src={DownArrow}
@@ -137,10 +161,9 @@ export default function SideNavBar() {
           </li>
           <li className={styles["category"]}>
             <button
-            className={styles['category-item']}
+              className={styles["category-item"]}
               onClick={handleCategoryClick}
               value={"student-support-activities"}
-
             >
               STUDENT SUPPORT ACTIVITIES
               <ExportedImage
@@ -154,7 +177,11 @@ export default function SideNavBar() {
             )}
           </li>
           <li className={styles["category"]}>
-            <Link className={`${styles.link} ${styles['category-item']}`} href="/contact">
+            <Link
+              className={`${styles.link} ${styles["category-item"]}`}
+              href="/contact"
+              prefetch={true}
+            >
               <span>CONTACT</span>
             </Link>
           </li>
