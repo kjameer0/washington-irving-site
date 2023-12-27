@@ -19,6 +19,7 @@ export default function NotFound() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       console.log(window.location.pathname);
+      console.log(pages.has(window.location.pathname.slice(1)))
       if (!pages.has(window.location.pathname.slice(1))) {
         setTimeout(() => {
           console.log(window.location.host);
@@ -38,6 +39,8 @@ export default function NotFound() {
     <div style={{ position: "absolute", top: "100px", right: "400px" }}>
       <p>Could not find requested resource</p>
       <p>
+        View <Link href="/about">all posts</Link>
+        View <Link href="/studnet-support-activities">all posts</Link>
         View <Link href="/about">all posts</Link>
       </p>
     </div>
