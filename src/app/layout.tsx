@@ -37,6 +37,7 @@ export default function RootLayout({
       </body>
       <Script id="redirect-script">
         {(() => {
+          console.log(typeof window);
           if (typeof window !== "undefined") {
             let l = window.location;
             if (l.search[1] === "/") {
