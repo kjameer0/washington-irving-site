@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
 import CustomScript from "@/components/CustomScript/CustomScript";
+import CustomScript2 from "@/components/CustomScript/CustomScript2";
 import "./globals.css";
 import SideNavBar from "@/components/SideNavBar/SideNavBar";
 import MobileNavBar from "@/components/MobileNavBar/MobileNavBar";
@@ -29,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <CustomScript />
+      {/* <CustomScript /> */}
       <body id="root">
         <Banner />
         <MobileNavBar />
@@ -37,6 +38,7 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
+      {/* <CustomScript2 /> */}
     </html>
   );
 }
