@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
+import CustomScript from "@/components/CustomScript/CustomScript";
 import "./globals.css";
 import SideNavBar from "@/components/SideNavBar/SideNavBar";
 import MobileNavBar from "@/components/MobileNavBar/MobileNavBar";
@@ -35,29 +36,7 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
-      <Script id="redirect-script">
-        {(() => {
-          console.log(typeof window);
-          if (typeof window !== "undefined") {
-            let l = window.location;
-            if (l.search[1] === "/") {
-              let decoded = l.search
-                .slice(1)
-                .split("&")
-                .map(function (s) {
-                  return s.replace(/~and~/g, "&");
-                })
-                .join("?");
-              window.history.replaceState(
-                null,
-                "",
-                l.pathname.slice(0, -1) + decoded + l.hash
-              );
-            }
-          }
-          return (<></>) as ReactNode;
-        })()}
-      </Script>
+      <CustomScript />
     </html>
   );
 }
