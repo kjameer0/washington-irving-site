@@ -24,7 +24,7 @@ export default function NotFound() {
         redirect("/");
       } else {
         let hash =
-          window.location.hash.length > 0 ? `#${window.location.hash}` : "";
+          window.location.hash.length > 0 ? `${window.location.hash}` : "";
         redirect(window.location.pathname + hash);
       }
     }
