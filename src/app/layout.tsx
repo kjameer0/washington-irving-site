@@ -30,7 +30,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* <CustomScript /> */}
       <body id="root">
         <Banner />
         <MobileNavBar />
