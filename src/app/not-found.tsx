@@ -21,17 +21,12 @@ export default function NotFound() {
       console.log(window.location.pathname);
       console.log(pages.has(window.location.pathname.slice(1)))
       if (!pages.has(window.location.pathname.slice(1))) {
-        setTimeout(() => {
           console.log(window.location.host);
           redirect("/");
-        },1000)
       } else {
         console.log(window.location.hash)
-        setTimeout(() => {
           let hash = window.location.hash;
           redirect(window.location.pathname + ".html" + hash);
-
-        },1000)
       }
     }
   }, []);
