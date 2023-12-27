@@ -10,6 +10,7 @@ export default function NavLinkList({ list }: {list: NavListItemType[]} ) {
             <Link
              href={anchor.path}
             className={styles['link-button']}
+            prefetch={true}
             >
               {anchor.label}
             </Link>
