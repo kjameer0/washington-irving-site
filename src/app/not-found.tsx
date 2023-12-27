@@ -35,7 +35,7 @@ export default function NotFound() {
       <p>Could not find requested resource</p>
       <p>
         View <Link href="/about">all posts</Link>
-        View <Link href="/studnet-support-activities">all posts</Link>
+        View <Link href="/student-support-activities">all posts</Link>
         View <Link href="/about">all posts</Link>
       </p>
     </div>
