@@ -18,26 +18,22 @@ export default function NotFound() {
   ]);
   useEffect(() => {
     if (typeof window !== "undefined") {
-      console.log(window.location.pathname);
-      console.log(pages.has(window.location.pathname.slice(1)))
-      if (!pages.has(window.location.pathname.slice(1))) {
-          console.log(window.location.host);
-          redirect("/");
+      let path = window.location.pathname;
+      if (path[path.length - 1] === "/") {
+        path = path.slice(0, -1);
+      }
+      if (!pages.has(path.slice(1))) {
+        redirect("/");
       } else {
-        console.log(window.location.hash)
-          let hash = window.location.hash;
-          redirect(window.location.pathname + ".html" + hash);
+        let hash = window.location.hash;
+        redirect(path + ".html" + hash);
       }
     }
   }, []);
   return (
-    <div style={{ position: "absolute", top: "100px", right: "400px" }}>
-      <p>Could not find requested resource</p>
-      <p>
-        View <Link href="/about">all posts</Link>
-        View <Link href="/student-support-activities">all posts</Link>
-        View <Link href="/about">all posts</Link>
-      </p>
-    </div>
+    <main className="">
+      <p>Could not find the page you&apos;re looking for.</p>
+      <Link href="/">Head back to the main page</Link>
+    </main>
   );
 }

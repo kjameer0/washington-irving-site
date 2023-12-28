@@ -1,9 +1,8 @@
 name: Rebuild YABC Washington Irving Site
 run-name: ${{ github.actor }} is rebuilding the site 🚀
 on:
-  push:
-    branches:
-      - main
+  repository_dispatch:
+    types: [publish-event]
 jobs:
   Rebuild-Site:
     runs-on: ubuntu-latest
