@@ -7,7 +7,7 @@
   border-bottom: 2px solid var(--main-bg);
   justify-content: center;
   align-items: center;
-  height: clamp(170px, 30vw, 400px);
+  height: clamp(170px, 30vw, 440px);
   background-position: 100% 100%;
   background-size: clamp(375px, 100%, 1440px) auto;
   scroll-margin-top: 70px;

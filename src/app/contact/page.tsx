@@ -22,7 +22,7 @@ export default async function Contact() {
   return (
     <main className={styles.core}>
       <HeroImage
-        imgLink={imgObj.admissionshero}
+        imgLink={imgObj.admissionshero + "?w=1400"}
         id="contact-hero"
         text={[]}
         color="white"

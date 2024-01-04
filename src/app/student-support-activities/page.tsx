@@ -21,7 +21,7 @@ export default async function StudentSupportCenter() {
     <main className={styles.core}>
       <HeroImage
         text={[]}
-        imgLink={imgObj.missionhero}
+        imgLink={imgObj.missionhero + "?w=1400"}
         id="mission-society-hero"
         color="white"
       />

@@ -30,7 +30,7 @@ export default async function About() {
     <main className={styles.core}>
       <HeroImage
         id="students-sitting-hero"
-        imgLink={imgObj.abouthero}
+        imgLink={imgObj.abouthero + "?w=1400"}
         text={[]}
         color="white"
       />

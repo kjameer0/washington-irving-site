@@ -18,7 +18,7 @@ export default async function CounselorCorner() {
   ) as sectionObjType;
   return (
     <main className={styles.core}>
-      <HeroImage imgLink={imgObj.counselorhero} text={[]} color="white" id="counselor-hero" />
+      <HeroImage imgLink={imgObj.counselorhero + "?w=1400"} text={[]} color="white" id="counselor-hero" />
       <h1 className="major-heading">{headers.pageTitle.mainHeading}</h1>
       <section className={styles["transform-lives-content"]}>
         <p className={`para-content ${styles["transform-p-first"]}`}>{paragraphs.transformPara.content}</p>

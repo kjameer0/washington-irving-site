@@ -24,7 +24,7 @@ export default async function Admissions() {
       <HeroImage
         text={[]}
         color="white"
-        imgLink={imgObj.admissionshero}
+        imgLink={imgObj.admissionshero + "?w=1400"}
         id="admissions-hero"
       />
       <h1 className="major-heading">{headers.pageTitle.mainHeading}</h1>

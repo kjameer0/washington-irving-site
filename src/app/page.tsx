@@ -23,7 +23,7 @@ export default async function Home() {
     <main className={styles.core}>
       <HeroImage
         id="school-facade"
-        imgLink={imgObj.homehero}
+        imgLink={imgObj.homehero + "?w=1400"}
         text={[]}
         color="white"
       />

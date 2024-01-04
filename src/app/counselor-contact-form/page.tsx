@@ -24,7 +24,7 @@ export default async function CounselorContactForm() {
       <HeroImage
         text={[]}
         color="white"
-        imgLink={imgObj.formhero}
+        imgLink={imgObj.formhero + "?w=1400"}
         id="counselor-contact-hero"
       />
       <h1 className="major-heading">{headers.counselorHeading.mainHeading}</h1>
