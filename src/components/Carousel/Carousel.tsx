@@ -34,7 +34,8 @@ export default function CarouselFactory({
       showArrows={true}
       showThumbs={false}
       infiniteLoop={true}
-      transitionTime={0}
+      autoPlay={true}
+      transitionTime={1}
       selectedItem={activeSlideIndex}
       onChange={(idx) => setActiveSlideIndex(idx)}
     >
