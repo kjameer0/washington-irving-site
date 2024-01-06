@@ -10,7 +10,8 @@ export default function Footer() {
       <div className={styles["info-wrapper"]}>
         <p className={styles["info-wrapper-p"]}>E: aayetiw@schools.nyc.gov | F: 646-654-9672</p>
         <p className={styles["info-wrapper-p"]}>Site Administrator Cell: 929-359-3750</p>
-        <p className={styles["info-wrapper-p"]}>Phone: 212-674-5000 x 11491/11420, or 646-654-9671</p>
+        <p className={styles["info-wrapper-p"]}>Site Developer: Khalid Jameer</p>
+        <p className={styles["info-wrapper-p"]}>Email: kjameer0@gmail.com</p>
       </div>
     </footer>
   );

@@ -189,10 +189,10 @@ a:hover {
 .carousel-root p {
   font-family: Inter-black;
   font-size: clamp(1rem, 3vw, 1.5rem);
-  margin-top: -50px;
+  margin-top: -30px;
 }
 .carousel {
-  min-height: 250px;
+  min-height: 240px;
   height: 100%;
 }
 .student-carousel-wrapper .carousel-root {
@@ -208,6 +208,7 @@ a:hover {
   left: 0%;
   width: 90%;
   margin: 0;
+  top: 92%;
 }
 .control-dots li {
   width: 10px;
